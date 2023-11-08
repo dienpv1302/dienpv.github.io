@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+#left-container{
+    padding: 10px;
+    width: 65%;
+    float: left;
+}
+
+#right-container{
+    width: 35%;
+    padding: 10px;
+    float: left;
+}
+
+#text_editor{
+    width: 100%;
+    height: 500px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 18px;
+    /* resize: none; */
+}
+
+section::after{
+    content: "";
+    display: block;
+    height: 0px;    
+    clear: both;
+}
+
+.uploadOuter {
+text-align: center;
+padding: 20px;    
+}
+
+.uploadOuter>strong {
+    padding: 0 10px;
+}
+.dragBox {
+    /* width: 250px; */
+    max-width: 800px;
+    width: 100%;
+    height: 80px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    line-height: 95px;
+    color: #999;
+    border: 2px dashed #ccc;
+    display: inline-block;
+    transition: transform 0.3s;   
+}
+.dragBox>input[type="file"] {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+}
+.draging {
+    transform: scale(1.1);
+}
