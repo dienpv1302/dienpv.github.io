@@ -1,0 +1,17 @@
+{   
+	"name": "DienPV-Play media with shortkey",   
+	"description": "Using shortkey to control video/audio on website!",   
+	"version": "7.0",   
+	"manifest_version": 3,
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+			//"matches": ["*://learnenglish.britishcouncil.org/*", "*://elllo.org/*", "*://studyphim.vn/*", "*://netflix.com/*", "*://ejoy-english/*"],
+            "js": ["content.js"],
+            "run_at": "document_idle"
+        }
+    ],
+	"permissions": [
+    "activeTab"
+  ]
+} 
