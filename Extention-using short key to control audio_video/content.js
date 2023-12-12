@@ -254,8 +254,8 @@ function time_to_string(timeInSeconds) {
             <p><b>a</b> Seeking left 3s; <b>alt+a</b> Seeking left 6s</p>
             <p><b>d</b> Seeking right 3s;</p>
             <p><b>w</b> Increase speed by 0.25x; <b>x</b> Decrease speed by 0.25x; <b>z</b> reset speed = 1x</p>
-            <p><b>[</b> Begin time Repeat A-B;</p>
-            <p><b>]</b> End time Repeat A-B;</p>
+            <p><b>[</b> Begin time Repeat A-B</p>
+            <p><b>]</b> End time Repeat A-B</p>
             <p><b>Ctr + \</b> Cancel repeat A-B</p>
         `;
       

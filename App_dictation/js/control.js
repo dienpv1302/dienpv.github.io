@@ -186,6 +186,9 @@ window.onload = function () {
         var id_pdf = document.getElementById('id-pdf');
         var repeat_a_b = document.getElementById('repeat_a_b');
         switch(name) {
+			case 'c':	
+				media.currentTime = 0;				
+				break;
             case 'a':	
                 if (event.altKey)
                     media.currentTime -= longseeking;
