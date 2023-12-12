@@ -47,28 +47,20 @@ document.addEventListener('keyup', (event) => {
 	}
 	
 	switch(name) {
-		case 'a':	
-			media.currentTime -= 3;	
-				
-			if (media.currentTime < 0)
-				media.currentTime = 0;
-				
+		case 'c':	
+			media.currentTime = 0;				
 			break;
-		case 'q':
-			media.currentTime -= 5;			
+		case 'a':
+			if (event.altKey) media.currentTime -= 6;
+			else media.currentTime -= 3;	
 				
 			if (media.currentTime < 0)
 				media.currentTime = 0;
 				
 			break;
 		case 'd':				
-				media.currentTime += 3;
-				
-			if (media.currentTime > media.duration)
-					media.currentTime = media.duration;
-			break;
-		case 'e':				
-			media.currentTime += 5;
+				if (event.altKey) media.currentTime += 6;
+				else media.currentTime += 3;
 				
 			if (media.currentTime > media.duration)
 					media.currentTime = media.duration;
@@ -159,8 +151,12 @@ function refreshTime() {
 		speed_item.style.setProperty('bottom', '10px');
 		speed_item.style.setProperty('z-index', '1000');
 		speed_item.style.setProperty('font-size', '20px');
+		speed_item.onclick = openPopupGuide;
 		media.parentNode.insertBefore(speed_item, media.nextSibling);
 	}
+	
+	var idpv_popup = document.getElementById('idpv_popup');
+	if(null == idpv_popup)  createPopupGuide();
 	
 	if (control_active){
 		setTimeout(refreshTime, 200);		
@@ -221,3 +217,65 @@ function time_to_string(timeInSeconds) {
   const time = formatTime(Math.round(timeInSeconds));
   return`${time.hours}:${time.minutes}:${time.seconds}`;
 }
+
+ function createPopupGuide() {
+        // Tạo cửa sổ pop-up
+        var popup = document.createElement('div');
+        popup.id = 'idpv_popup';
+        popup.style.display = 'none';
+        popup.style.position = 'fixed';
+        popup.style.top = '50%';
+        popup.style.left = '50%';
+        popup.style.transform = 'translate(-50%, -50%)';
+        popup.style.padding = '20px';
+        popup.style.backgroundColor = '#fff';
+        popup.style.border = '1px solid #ccc';
+        popup.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        popup.style.zIndex = '9999';
+        //popup.style.maxWidth = '400px';
+		popup.style.width = '50%'; 
+
+        // Tạo nút đóng
+        var closeBtn = document.createElement('span');
+        closeBtn.id = 'close-btn';
+        closeBtn.innerHTML = 'X';
+        closeBtn.style.cursor = 'pointer';
+        closeBtn.style.position = 'absolute';
+        closeBtn.style.top = '10px';
+        closeBtn.style.right = '10px';
+        closeBtn.onclick = closePopupGuide;
+
+        // Tạo nội dung hướng dẫn
+        var content = document.createElement('div');
+        content.id = 'popup-content';
+		content.innerHTML = `
+            <h2 style="color:black">Hướng dẫn sử dụng tính năng</h2>
+            <p><b>s</b> Play/Pause; <b>c</b> Restart audio</p>
+            <p><b>a</b> Seeking left 3s; <b>alt+a</b> Seeking left 6s</p>
+            <p><b>d</b> Seeking right 3s;</p>
+            <p><b>w</b> Increase speed by 0.25x; <b>x</b> Decrease speed by 0.25x; <b>z</b> reset speed = 1x</p>
+            <p><b>[</b> Begin time Repeat A-B;</p>
+            <p><b>]</b> End time Repeat A-B;</p>
+            <p><b>Ctr + \</b> Cancel repeat A-B</p>
+        `;
+      
+
+        // Thêm nút đóng và nội dung vào cửa sổ pop-up
+        popup.appendChild(closeBtn);
+        popup.appendChild(content);
+
+        // Thêm cửa sổ pop-up vào body
+        document.body.appendChild(popup);
+
+        // Hiển thị cửa sổ pop-up
+        popup.style.display = 'none';
+    }
+
+    // Hàm đóng cửa sổ pop-up
+    function closePopupGuide() {
+        document.getElementById('idpv_popup').style.display = 'none';
+    }
+	
+	function openPopupGuide() {
+        document.getElementById('idpv_popup').style.display = 'block';
+    }

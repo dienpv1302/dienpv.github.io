@@ -204,7 +204,7 @@ window.onload = function () {
                     
                 if (media.currentTime > media.duration)
                         media.currentTime = media.duration;
-                console.log(22);
+                
                 break;
             case 'w':
                 media.playbackRate += 0.25;

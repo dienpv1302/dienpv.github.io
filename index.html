@@ -65,7 +65,7 @@
                 <div style="margin-left: 10px; color: white; cursor: pointer;" onclick="return setLoop(this);">
                   Loop
                 </div>
-                <div id="id-mode" style="margin-left: 10px; color: white; cursor: pointer;" onclick="return changeMode(this);">
+                <div id="id-mode" style="margin-left: 10px; color: white; cursor: pointer;display:none" onclick="return changeMode(this);">
                   Mode
                 </div>
                 <div id="id-rp-ab" style="margin-left: 10px; color: aqua;font-weight:bold; color: #d11c95;" >
@@ -171,7 +171,24 @@
     </div>
 </div>
 
-  <a style="position: fixed;right: 20px;bottom: 40px;" href="https://github.com/dienpv1302/dienpv1302.github.io/archive/refs/heads/main.zip">Download addon</a>
+
+  <!-- Cửa sổ pop-up -->
+<div id="idpv_popup">
+    <div id="popup-content">
+        <span id="close-btn" onclick="document.getElementById('idpv_popup').style.display = 'none';">X</span>
+        <h2>Hướng dẫn sử dụng tính năng</h2>
+        <p><b>Space</b> Play/Pause; <b>c</b> Restart audio</p>
+		<p><b>a</b> Seeking left 3s; <b>alt+a</b> Seeking left 6s</p>
+		<p><b>d</b> Seeking right 3s; <b>alt+d</b> Seeking right 6s</p>
+		<p><b>w</b> Increase speed by 0.25x; <b>x</b> Decrease speed by 0.25x; <b>z</b> reset speed = 1x</p>
+		<p><b>[</b> Begin time Repeat A-B;</p>
+		<p><b>]</b> End time Repeat A-B;</p>
+		<p><b>Ctr + \</b> Cancel repeat A-B</p>
+    </div>
+</div>
+
+  <a style="position: fixed;right: 20px;bottom: 80px;" href="#" onclick="document.getElementById('idpv_popup').style.display = 'block'"><b>User guide<b></a>
+  <a style="position: fixed;right: 20px;bottom: 40px;" href="https://github.com/dienpv1302/dienpv1302.github.io/archive/refs/heads/main.zip">Addon chrome</a>
 </body>
 </html>
 
@@ -248,3 +265,33 @@
       display: none;
   }
   </style>
+  
+  <style>
+        /* Kiểu dáng cửa sổ pop-up */
+        #idpv_popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+			width: 50%;
+        }
+
+        /* Tối đa hóa kích thước cho nội dung hướng dẫn */
+        #popup-content {
+            max-width: 400px;
+        }
+
+        /* Nút đóng */
+        #close-btn {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
