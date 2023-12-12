@@ -7,7 +7,7 @@ var isLoop = false;
 var control_active = false;
 
 // Add event listener on keydown
-document.addEventListener('keyup', (event) => {	
+document.addEventListener('keydown', (event) => {	
 	var media = document.querySelector('video');
 	if(media == null)
 		media = document.querySelector('audio');

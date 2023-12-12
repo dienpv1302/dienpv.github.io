@@ -19,7 +19,7 @@ window.onload = function () {
 
     var video_container = document.getElementById('video-container');
     // Add event listener on keydown
-    document.addEventListener('keyup', control_mod);
+    document.addEventListener('keydown', control_mod);
 
     changeMode(document.getElementById('id-mode'));
 
