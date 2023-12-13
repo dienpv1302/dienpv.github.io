@@ -190,7 +190,7 @@ window.onload = function () {
 				media.currentTime = 0;				
 				break;
             case 'a':	
-                if (event.altKey)
+                if (event.ctrlKey)
                     media.currentTime -= longseeking;
                 else
                     media.currentTime -= shortseeking;			
@@ -200,7 +200,7 @@ window.onload = function () {
                     
                 break;
             case 'd':				
-                if (event.altKey)
+                if (event.ctrlKey)
                     media.currentTime += longseeking;
                 else
                     media.currentTime += shortseeking;			

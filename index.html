@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="App_dictation/style/style.css" type="text/css">
   <link rel="stylesheet" href="App_dictation/style/style-video.css" type="text/css">
   <link rel="icon" type="image/png" href="App_dictation/img/church.png"/>
-  <script src="App_dictation/js/control.js?v=1.0"></script>
+  <script src="App_dictation/js/control.js?v=1.2"></script>
 </head>
 <body>
   <head></head>
@@ -106,7 +106,7 @@
         </div>
     </div>
     <div id="right-container">
-      <textarea id="text_editor" name="text_editor" placeholder = "User's guide:&#10;- Ctr + Space: Play/Pause&#10;- Ctr + ->: Seeking right 2s&#10;- Ctr + Shift + ->: Seeking right 5s&#10;- Ctr + <-: Seeking left 2s&#10;- Ctr + Shift + <-: Seeking left 5s&#10&#10;- Ctr + Q: Hide/Show (Audio/Pdf)&#10;- Ctr + M: Switch to Show Audio->Pdf/Pdf->Audio&#10&#10;- Ctr + [: Begin time Repeat A-B&#10;- Ctr + ]: End time Repeat A-B&#10;- Ctr + \: Cancel repeat A-B&#10&#10;- Ctrl + ArrowUp: Increase speed by 0.25x&#10;- Ctrl + ArrowDown: Decrease speed by 0.25x&#10;- Ctrl + Shift + ArrowDown: Reset speed = 1x" spellcheck="true"> </textarea>
+      <textarea id="text_editor" name="text_editor" placeholder = "User's guide:&#10;- Ctr + Space: Play/Pause&#10;- Ctr + ->: Seeking right 3s&#10;- Ctr + Shift + ->: Seeking right 6s&#10;- Ctr + <-: Seeking left 3s&#10;- Ctr + Shift + <-: Seeking left 6s&#10&#10;- Ctr + Q: Hide/Show (Audio/Pdf)&#10;- Ctr + M: Switch to Show Audio->Pdf/Pdf->Audio&#10&#10;- Ctr + [: Begin time Repeat A-B&#10;- Ctr + ]: End time Repeat A-B&#10;- Ctr + \: Cancel repeat A-B&#10&#10;- Ctrl + ArrowUp: Increase speed by 0.25x&#10;- Ctrl + ArrowDown: Decrease speed by 0.25x&#10;- Ctrl + Shift + ArrowDown: Reset speed = 1x" spellcheck="true"></textarea>
       <p id="dpv_time" style="color: rgb(255, 145, 0); font-weight:bold; font-size: 15px;"></p>
     </div>
   </section>
@@ -178,8 +178,8 @@
         <span id="close-btn" onclick="document.getElementById('idpv_popup').style.display = 'none';">X</span>
         <h2>Hướng dẫn sử dụng tính năng</h2>
         <p><b>Space</b> Play/Pause; <b>c</b> Restart audio</p>
-		<p><b>a</b> Seeking left 3s; <b>alt+a</b> Seeking left 6s</p>
-		<p><b>d</b> Seeking right 3s;</p>
+		<p><b>a</b> Seeking left 3s; <b>clt+a</b> Seeking left 6s</p>
+		<p><b>d</b> Seeking right 3s; <b>clt+d</b> Seeking right 6s</p>
 		<p><b>w</b> Increase speed by 0.25x; <b>x</b> Decrease speed by 0.25x; <b>z</b> reset speed = 1x</p>
 		<p><b>[</b> Begin time Repeat A-B</p>
 		<p><b>]</b> End time Repeat A-B</p>
