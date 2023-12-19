@@ -323,6 +323,9 @@ window.onload = function () {
     }
 
     function refreshTime() {
+		var speed_item = document.getElementById('idPlaybackRate');
+		speed_item.innerHTML = media.playbackRate +"x";
+		
         document.getElementById('dpv_time').innerHTML = document.getElementById('time-elapsed').innerHTML + ' / ' 
         + document.getElementById('duration').innerHTML + ' ' + media.playbackRate +'x';
         
