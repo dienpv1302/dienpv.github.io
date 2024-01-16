@@ -5,7 +5,7 @@
 	"manifest_version": 3,
     "content_scripts": [
         {
-			"matches": ["*://ielts.smartcom.vn/*"],
+			"matches": ["*://ielts.smartcom.vn/*","*://learnenglish.britishcouncil.org/*"],
             //"matches": ["*://*/*"],
 			//"matches": ["*://learnenglish.britishcouncil.org/*", "*://elllo.org/*", "*://studyphim.vn/*", "*://netflix.com/*", "*://ejoy-english/*"],
             "js": ["content.js"],
