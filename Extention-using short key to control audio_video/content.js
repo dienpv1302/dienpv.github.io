@@ -74,7 +74,7 @@ document.addEventListener('keydown', (event) => {
 		case 'z':
 			media.playbackRate = 1;
 			break;
-		case 's':
+		case ' ':
 			if (media.paused)
 				media.play();
 			else
@@ -250,7 +250,7 @@ function time_to_string(timeInSeconds) {
         content.id = 'popup-content';
 		content.innerHTML = `
             <h2 style="color:black">Hướng dẫn sử dụng tính năng</h2>
-            <p><b>s</b> Play/Pause; <b>c</b> Restart audio</p>
+            <p><b>Space</b> Play/Pause; <b>c</b> Restart audio</p>
             <p><b>a</b> Seeking left 3s; <b>alt+a</b> Seeking left 6s</p>
             <p><b>d</b> Seeking right 3s;</p>
             <p><b>w</b> Increase speed by 0.25x; <b>x</b> Decrease speed by 0.25x; <b>z</b> reset speed = 1x</p>
