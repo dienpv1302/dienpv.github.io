@@ -190,7 +190,10 @@ window.onload = function () {
 				media.currentTime = 0;				
 				break;
             case 'a':	
-                if (event.ctrlKey)
+                if(switchkey_mode == 1)
+					break;
+				
+				if (event.ctrlKey)
                     media.currentTime -= longseeking;
                 else
                     media.currentTime -= shortseeking;			
@@ -199,7 +202,34 @@ window.onload = function () {
                     media.currentTime = 0;
                     
                 break;
-            case 'd':				
+		    case 'ArrowLeft':	
+                if(switchkey_mode != 1)
+					break;
+				
+				if (event.ctrlKey)
+                    media.currentTime -= longseeking;
+                else
+                    media.currentTime -= shortseeking;			
+                    
+                if (media.currentTime < 0)
+                    media.currentTime = 0;
+                    
+                break;
+            case 'd':
+				if(switchkey_mode == 1)
+					break;
+                if (event.ctrlKey)
+                    media.currentTime += longseeking;
+                else
+                    media.currentTime += shortseeking;			
+                    
+                if (media.currentTime > media.duration)
+                        media.currentTime = media.duration;
+                
+                break;
+			case 'ArrowRight':
+				if(switchkey_mode != 1)
+					break;
                 if (event.ctrlKey)
                     media.currentTime += longseeking;
                 else
@@ -210,9 +240,23 @@ window.onload = function () {
                 
                 break;
             case 'w':
+				if(switchkey_mode == 1)
+					break;
+                media.playbackRate += 0.25;
+                break;
+			case 'ArrowUp':
+				if(switchkey_mode != 1)
+					break;
                 media.playbackRate += 0.25;
                 break;
             case 'x':
+				if(switchkey_mode == 1)
+					break;
+                media.playbackRate -= 0.25;
+                break;
+			case 'ArrowDown':
+				if(switchkey_mode != 1)
+						break;
                 media.playbackRate -= 0.25;
                 break;
             case 'z':
@@ -581,6 +625,23 @@ function changeMode(ob)
         right_container.style.width = '35%';
         left_container.style.width = '65%';
         right_container.style.display = '';
+    }
+}
+
+switchkey_mode = 1;
+
+function switchKey(ob)
+{
+   
+    if(ob.style.color == 'white')
+    {
+        ob.style.color = 'aqua';
+        ob.style['font-weight'] = 'bold';
+        switchkey_mode = 2;      
+    }else{
+        ob.style.color = 'white';
+        ob.style['font-weight'] = '';
+        switchkey_mode = 1;       
     }
 }
 
